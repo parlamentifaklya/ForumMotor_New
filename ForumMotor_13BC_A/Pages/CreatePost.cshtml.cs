@@ -22,6 +22,9 @@ namespace ForumMotor_13BC_A.Pages
             _userManager = userManager;
         }
         [BindProperty(SupportsGet = true)]
+        public int PostId { get; set; } = default!;
+
+        [BindProperty(SupportsGet = true)]
         public int TopicId { get; set; }
 
 
@@ -46,7 +49,7 @@ namespace ForumMotor_13BC_A.Pages
             Post.TopicId = TopicId;
             Post.CreateDate = DateTime.Now;
             Post.UserId = _userManager.GetUserId(User);
-
+            Post.Reply = PostId;
             _context.Posts.Add(Post);
             await _context.SaveChangesAsync();
 

@@ -8,7 +8,7 @@
 <h1>PostList</h1>
 
 <p>
-    <a href="/CreatePost?TopicId=@Model.TopicId>Create New</a>
+    <a href="/CreatePost?TopicId=@Model.TopicId">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -68,6 +68,7 @@
                 @Html.DisplayFor(modelItem => item.User.Id)
             </td>
             <td>
+                <a href="/CreatePost?PostId=@item.Id">Reply</a> |
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>

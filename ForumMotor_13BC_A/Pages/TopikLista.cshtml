@@ -35,7 +35,7 @@
 @foreach (var item in Model.Topic) {
         <tr>
             <td>
-                <a asp-page = "PostList?TopicId=@item.Id"> @Html.DisplayFor(modelItem => item.Name))</a>
+                <a href = "/PostList?TopicId=@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
